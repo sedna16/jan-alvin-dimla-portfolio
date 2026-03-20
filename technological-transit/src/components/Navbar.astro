@@ -1,0 +1,52 @@
+---
+---
+
+<script>
+
+    // mobile menu toggle function
+    function toggle_menu() {
+
+        const element = document.getElementById('mobile-toggle');
+
+        if (element) {
+            element.classList.toggle('collapse');
+        }
+
+    }
+    document.getElementById('menu-toggler').addEventListener('click', toggle_menu);
+
+</script>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="#">Jan Alvin Dimla</a>
+
+    <button class="navbar-toggler" type="button" id="menu-toggler" aria-controls="mobile-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mobile-toggle">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/services/">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/portfolio/">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/blog/">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact/">Contact</a>
+            </li>
+        </ul>
+    </div> 
+
+  </div>
+</nav>
+
+

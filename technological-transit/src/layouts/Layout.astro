@@ -1,0 +1,39 @@
+
+---
+import 'bootstrap/dist/css/bootstrap.min.css';
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js';
+//import feather from 'feather-icons/dist/feather.js';
+
+import Navbar from '../components/Navbar.astro';
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+
+		<link rel="stylesheet" href="../../public/custom.css" />
+
+		<title>Jan Alvin Dimla's Portfolio</title>
+
+	</head>
+	<body class="darkmode2" id="main-body">
+
+		<Navbar />
+
+		<slot />
+
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+	}
+</style>
