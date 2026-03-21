@@ -1,0 +1,120 @@
+/* Default Light Mode (Soft Pantone / Clean) */
+:root {
+  --primary: #6B8EAD;    /* Pantone Serenity Blue */
+  --secondary: #95A5A6;  /* Soft Grey */
+  --success: #88B04B;    /* Pantone Leafy Green */
+  --warning: #F7CAC9;    /* Pantone Rose Quartz */
+  --danger: #DD4124;     /* Pantone Fiesta Red */
+  --info: #92A8D1;       /* Soft Periwinkle */
+  --light: #F7F7F7;
+  --dark: #2C3E50;
+  --white: #FFFFFF;
+  --black: #000000;
+  
+  --bg-body: #FFFFFF;
+  --text-body: #2C3E50;
+}
+
+/* Night Blue Dark Mode */
+body.darkmode {
+  --primary: #2c4164;    /* Lighter Soft Blue for contrast */
+  --secondary: #7F8C8D;
+  --success: #A3C585;    /* Muted Pantone Green */
+  --warning: #FFD1DC;    /* Soft Pastel Pink/Yellow */
+  --danger: #FF6F61;     /* Pantone Living Coral */
+  --info: #B5C7ED;
+  --light: #243447;      /* Muted Navy Light */
+  --dark: #0B1426;       /* Deepest Night Blue */
+  --white: #EAEAEA;
+  --black: #050A14;
+
+  --bg-body: #0B1426;    /* Dark Night Blue Background */
+  --text-body: #D6E0EF;  /* Soft Blue-Grey Text */
+  
+  background-color: var(--bg-body);
+  color: var(--text-body);
+}
+
+/* Overriding Bootstrap Utility Classes */
+.text-primary   { color: var(--primary) !important; }
+.text-secondary { color: var(--secondary) !important; }
+.text-success   { color: var(--success) !important; }
+.text-warning   { color: var(--warning) !important; }
+.text-danger    { color: var(--danger) !important; }
+.text-info      { color: var(--info) !important; }
+.text-light     { color: var(--light) !important; }
+.text-dark      { color: var(--dark) !important; }
+.text-white     { color: var(--white) !important; }
+.text-black     { color: var(--black) !important; }
+
+.bg-primary     { background-color: var(--primary) !important; }
+.bg-secondary   { background-color: var(--secondary) !important; }
+.bg-success     { background-color: var(--success) !important; }
+.bg-warning     { background-color: var(--warning) !important; }
+.bg-danger      { background-color: var(--danger) !important; }
+.bg-info        { background-color: var(--info) !important; }
+.bg-light       { background-color: var(--light) !important; }
+.bg-dark        { background-color: var(--dark) !important; }
+.bg-white       { background-color: var(--white) !important; }
+.bg-black       { background-color: var(--black) !important; }
+
+/* --- Navbar Customization --- */
+
+/* Default Light Navbar */
+.navbar {
+  background-color: var(--white);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar-brand {
+  color: var(--primary) !important;
+  font-weight: 700;
+}
+
+.nav-link {
+  color: var(--dark) !important;
+  opacity: 0.8;
+}
+
+.nav-link:hover {
+  color: var(--primary) !important;
+  opacity: 1;
+}
+
+/* Night Blue Dark Mode Navbar */
+body.darkmode .navbar {
+  background-color: var(--dark) !important; /* The Deep Night Blue */
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+body.darkmode .navbar-brand {
+  color: var(--primary) !important; /* Pantone Serenity/Soft Blue */
+}
+
+body.darkmode .nav-link {
+  color: var(--white) !important;
+  opacity: 0.7;
+}
+
+body.darkmode .nav-link:hover,
+body.darkmode .nav-link.active {
+  color: var(--primary) !important;
+  opacity: 1;
+}
+
+/* Customizing the Mobile Toggler */
+body.darkmode .navbar-toggler {
+  border-color: rgba(255,255,255,0.1);
+}
+
+body.darkmode .navbar-toggler-icon {
+  /* This creates a soft blue-ish tint for the "hamburger" icon */
+  filter: invert(80%) sepia(20%) saturate(500%) hue-rotate(180deg);
+}
+
+.dotted-background {
+    background-color: #330033;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
