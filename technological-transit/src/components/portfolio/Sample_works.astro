@@ -1,0 +1,182 @@
+---
+import Modal from '../Modal.astro';
+
+var loop_items = [
+    {
+        title: "[AI] Full Stack Development",
+        description: "This is a sample project that involves creating a text-to-image generation API application using Cloudflare's Workers AI feature. The project utilizes javascript and Cloudflare's open source AI Models.",
+        image: "/public/portfolio/cloudflare-text-to-image-api-thumb.png",
+        link: "/public/portfolio/cloudflare-text-to-image-api.png",
+        bg_class: "hero-section d-flex align-items-center py-5",
+        direction: "right",
+    },
+    {
+        title: "SAAS Full Stack Development",
+        description: "Sample code from a project for a SAAS company. It involves creating a custom web application using Vuejs and Python (django) that provides a user-friendly interface and robust backend functionality to meet the client's specific needs.",
+        image: "/public/portfolio/hierarch-sample-loop-item-thumb.png",
+        link: "/public/portfolio/hierarch-sample-loop-item.png",
+        bg_class: "hero-section d-flex align-items-center py-5",
+        direction: "left",
+    },
+    {
+        title: "Wordpress Development",
+        description: "This is a sample project for an agency. It involves creating a custom WordPress website using Elementor, a popular page builder plugin. The project includes designing and developing a visually appealing and user-friendly website that meets the client's requirements and showcases their brand effectively.",
+        image: "/public/portfolio/wordpress-elementor-thumb.png",
+        link: "/public/portfolio/wordpress-elementor.png",
+        bg_class: "hero-section d-flex align-items-center py-5",
+        direction: "right",
+    },
+    {
+        title: "N8N Workflow Automation",
+        description: "Multi-scenario project for an agency. This is a sample N8N scenario that sends emails to new leads and customers automatically, so you can follow up with them faster and never miss an opportunity. It utilizes Notion, Gemini AI, and Brevo.",
+        image: "/public/portfolio/n8n-send-emails-to-leads-thumb.png",
+        link: "/public/portfolio/n8n-send-emails-to-leads.png",
+        bg_class: "hero-section d-flex align-items-center py-5",
+        direction: "left",
+    },
+    {
+        title: "Make.com Workflow Automation",
+        description: "This is a sample Make.com scenario that sends discovery call email to clients automatically when the deal is moved. It utilizes Hubspot, Gemini AI, Slack and Gmail.",
+        image: "/public/portfolio/make-send-discovery-call-email-thumb.png",
+        link: "/public/portfolio/make-send-discovery-call-email.png",
+        bg_class: "hero-section d-flex align-items-center py-5",
+        direction: "right",
+    },
+    {
+        title: "Initial SEO On-Page Audit",
+        description: "This is a sample project for an agency. It involves conducting an initial SEO audit of a client's website to identify areas for improvement and optimize their online visibility. It utilizes various SEO tools and techniques.",
+        image: "/public/portfolio/initial-seo-onpage-audit-thumb.png",
+        link: "/public/portfolio/initial-seo-onpage-audit.png",
+        bg_class: "hero-section d-flex align-items-center py-5",
+        direction: "left",
+    },
+    {
+        title: "Personal Dashboard",
+        description: "This is a sample project for an agency. It involves implementing a personal dashboard using Astro and JavaScript. It utilizes various frontend technologies to create a responsive and interactive user interface.",
+        image: "/public/portfolio/personal-dashboard-astro-javascript-json-thumb.png",
+        link: "/public/portfolio/personal-dashboard-astro-javascript-json.png",
+        bg_class: "hero-section d-flex align-items-center py-5",
+        direction: "right",
+    },
+    {
+        title: "Quantitative Finance: Kelly Criterion Calculation",
+        description: "This is a sample project for an agency. It involves implementing the Kelly Criterion for optimal bet sizing in quantitative finance. It utilizes Python for the calculations and data analysis.",
+        image: "/public/portfolio/quantitative-finance-kelly-criterion-calculation-python-thumb.png",
+        link: "/public/portfolio/quantitative-finance-kelly-criterion-calculation-python.png",
+        bg_class: "hero-section d-flex align-items-center py-5",
+        direction: "left",
+    },
+]
+
+
+var modal_image_src = "";
+
+---
+
+<script>
+
+    //
+    //
+    function init_image_triggers() {
+
+        //
+        //
+        const image_triggers = document.querySelectorAll('.image_modal_thumb');
+        var show_modal = true;
+        var modal_image_src = "";
+        var modal_element = document.getElementById("image_modal_container");
+
+        //
+        //
+        image_triggers.forEach(link => {
+
+            //
+            //
+            link.addEventListener('click', function(event) {
+                
+                //
+                //
+                event.preventDefault(); // Prevent the link from navigating
+
+                //
+                // Get the data attributes using the dataset property
+                const clicked_image = this.dataset.image;
+                modal_image_src = clicked_image;
+                const imgElement = document.getElementById("modal_image");
+                imgElement.src = modal_image_src;
+
+                //
+                //
+                modal_element.classList.add("d-block");
+            });
+
+        });
+
+        //
+        //
+        document.getElementById("close_modal_btn").addEventListener("click", function() {
+            modal_element.classList.remove("d-block");
+        });
+
+    }
+
+    init_image_triggers();    
+
+</script>
+
+{loop_items.map((item) => (
+
+    <section class={item.bg_class}>
+        <div class="container py-5">
+
+            <div class="d-block text-center mb-3">
+                <h2 class="title display-4">{item.title}</h2>
+            </div>
+
+            {item.direction == "right" ? 
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-3 text-center">
+                    <a href="#" class="image_modal_thumb" data-image={item.link}>
+                        <img src={item.image} alt={item.title} class="img-fluid object-fit-contain">
+                    </a>
+                    <small>Click for fullview</small>
+                </div>
+                <div class="col-lg-6 mb-3">
+                    <p class="text-justify" set:html={item.description} />
+                </div>
+            </div>
+            : 
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-3">
+                    <p class="text-justify" set:html={item.description} />
+                </div>
+                <div class="col-lg-6 mb-3 text-center">
+                    <a href="#" class="image_modal_thumb" data-image={item.link}>
+                        <img src={item.image} alt={item.title} class="img-fluid object-fit-contain">
+                    </a>
+                    <small>Click for fullview</small>
+                </div>
+            </div>
+            }
+
+        </div>
+    </section>
+
+))}
+
+<div class="modal fade show" id="image_modal_container" style="background-color: rgba(0, 0, 0, 0.7);">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content rounded-0">
+
+            <div class="modal-header">
+                <button id="close_modal_btn" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <img src="" class="img-fluid object-fit-contain" id="modal_image">
+            </div>
+
+        </div>
+    </div>
+</div>
+

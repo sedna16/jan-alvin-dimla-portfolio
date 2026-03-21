@@ -17,7 +17,7 @@
 
 /* Night Blue Dark Mode */
 body.darkmode {
-  --primary: #89ABE3;    /* Lighter Soft Blue for contrast */
+  --primary: #2c4164;    /* Lighter Soft Blue for contrast */
   --secondary: #7F8C8D;
   --success: #A3C585;    /* Muted Pantone Green */
   --warning: #FFD1DC;    /* Soft Pastel Pink/Yellow */

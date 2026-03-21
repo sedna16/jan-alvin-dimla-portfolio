@@ -14,4 +14,7 @@ export default defineConfig({
         }
     },
 
+    site: 'https://sedna16.github.io', // e.g., 'https://johndoe.github.io'
+    base: '/jan-alvin-dimla-portfolio', // e.g., '/my-website-repo'
+
 });

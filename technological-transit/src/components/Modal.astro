@@ -1,0 +1,26 @@
+
+---
+
+const { id } = Astro.props;
+
+---
+
+<!-- src/components/Modal.astro -->
+<dialog id={id} class="modal">
+  <div class="modal-content">
+    <slot />
+  </div>
+</dialog>
+
+<style>
+  .modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .modal-content {
+    /* Add your styling for the image container */
+  }
+</style>
+
+<script define:vars={{id}}>
+  // Add client-side logic if needed, or rely on native showModal()
+</script>

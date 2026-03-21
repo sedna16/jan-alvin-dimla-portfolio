@@ -1,0 +1,85 @@
+---
+
+var loop_items = [
+    {
+        title: "Full Stack Development",
+        description: "The building of complete websites, from the parts users see to the databases that store information. This ensures every digital product is fast, secure, and easy to use.",
+        image: "https://placehold.co/600x400/000000/FFFFFF/png",
+        bg_class: "hero-section d-flex align-items-center py-5",
+        tags: ['HTML', 'CSS', 'PHP', 'JavaScript', 'Python', 'MySQL', 'PostgreSQL', 'Laravel', 'Django', 'React', 'Node.js'],
+    },
+    {
+        title: "Workflow Automation",
+        description: "The setup of smart tools that handle boring, repetitive tasks automatically. This saves hours of manual work so teams can focus on more important goals.",
+        image: "https://placehold.co/600x400/000000/FFFFFF/png",
+        bg_class: "hero-section d-flex align-items-center py-5 off-white",
+        tags: ['N8N', 'Zapier', 'Make.com (Integromat)', 'Python scripting', 'API integrations'],
+    },
+    {
+        title: "Search Engine Optimization",
+        description: "The improvement of website setups so they show up higher in search results. This helps more of the right customers find and visit the site.",
+        image: "https://placehold.co/600x400/000000/FFFFFF/png",
+        bg_class: "hero-section d-flex align-items-center py-5",
+        tags: ['Keyword research', 'on-page optimization', 'technical SEO', 'link building', 'content strategy'],
+    },
+    {
+        title: "CRM",
+        description: "The organization of systems that track every lead and customer interaction in one place. This makes sure no follow-up is forgotten and every client stays organized.",
+        image: "https://placehold.co/600x400/000000/FFFFFF/png",
+        bg_class: "hero-section d-flex align-items-center py-5 off-white",
+        tags: ['HubSpot', 'Notion', 'Salesforce', 'Zoho CRM', 'Pipedrive', 'Monday.com', 'Clickup', 'Zoho'],
+    },
+    {
+        title: "Recruitment",
+        description: "The management of the hiring process to find and vet the best people for the job. This simplifies everything from the first post to the final hire.",
+        image: "https://placehold.co/600x400/000000/FFFFFF/png",
+        bg_class: "hero-section d-flex align-items-center py-5",
+        tags: ['Job posting', 'candidate sourcing', 'resume screening', 'interview scheduling', 'onboarding'],
+    }
+]
+
+---
+
+{loop_items.map((item) => (
+
+    <section class={item.bg_class}>
+        <div class="container py-5">
+
+            <div class="d-block text-center mb-3">
+                <h2 class="title display-4">{item.title}</h2>
+            </div>
+
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-3 text-center">
+                    <img src={item.image} alt={item.title} class="img-fluid">
+                </div>
+                <div class="col-lg-6 mb-3">
+                    <p class="text-justify" set:html={item.description} />
+
+                    <div class="mt-4">
+                        {item.tags.map((tag) => (
+                            
+                            <span class="badge bg-primary me-2 mb-2 p-3">{tag}</span>
+
+                        ))}
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+))}
+
+<style>
+
+    .text-justify {
+        text-align: justify !important;
+    }
+
+    .off-white {
+        background-color: #f0f0f0 !important;
+    }
+
+</style>
