@@ -50,21 +50,21 @@ var loop_items = [
             </div>
 
             <div class="row align-items-center mb-5">
+                
                 <div class="col-lg-6 mb-3 text-center">
-                    <img src={item.image} alt={item.title} class="img-fluid">
-                </div>
-                <div class="col-lg-6 mb-3">
                     <p class="text-justify" set:html={item.description} />
+                </div>
 
-                    <div class="mt-4">
+                <div class="col-lg-6 mb-3 text-center">
+                    <div class="d-block">
                         {item.tags.map((tag) => (
                             
                             <span class="badge bg-primary me-2 mb-2 p-3">{tag}</span>
 
                         ))}
                     </div>
-
                 </div>
+
             </div>
 
         </div>
