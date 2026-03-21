@@ -15,6 +15,5 @@ export default defineConfig({
     },
 
     site: 'https://sedna16.github.io',
-    base: '/',
 
 });
