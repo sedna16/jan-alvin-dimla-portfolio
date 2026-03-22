@@ -6,6 +6,8 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import Navbar from '../components/Navbar.astro';
 
+const { title, description } = Astro.props;
+
 ---
 
 <!doctype html>
@@ -19,7 +21,8 @@ import Navbar from '../components/Navbar.astro';
 
 		<link rel="stylesheet" href="/custom.css" />
 
-		<title>Jan Alvin Dimla's Portfolio</title>
+		<title>{title}</title>
+    	<meta name="description" content={description} />
 
 	</head>
 	<body class="darkmode2" id="main-body">
